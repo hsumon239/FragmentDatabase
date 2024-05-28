@@ -69,7 +69,7 @@ public class AddCourseFragment extends Fragment {
 
                 // on below line we are calling a method to add new
                 // course to sqlite data and pass all our values to it.
-                dbHandler.addNewCourse(courseName, courseDuration, courseDescription, courseTracks);
+                dbHandler.addNewCourse(courseName, courseDuration, courseTracks, courseDescription);
 
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(getActivity(), "Course has been added.", Toast.LENGTH_SHORT).show();
