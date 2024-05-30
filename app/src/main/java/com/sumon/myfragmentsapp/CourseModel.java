@@ -52,11 +52,13 @@ public class CourseModel {
     public void setId(int id) { this.id = id; }
 
     // constructor
-    public CourseModel(String courseName,
+    public CourseModel(int id,
+                       String courseName,
                        String courseDuration,
                        String courseTracks,
                        String courseDescription)
     {
+        this.id = id;
         this.courseName = courseName;
         this.courseDuration = courseDuration;
         this.courseTracks = courseTracks;

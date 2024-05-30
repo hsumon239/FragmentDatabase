@@ -1,7 +1,5 @@
 package com.sumon.myfragmentsapp;
 
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +8,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -54,9 +53,12 @@ public class CourseListFragment extends Fragment {
 
         for (CourseModel c : courseModelArrayList) {
             TableRow tbrow = new TableRow(getActivity());
-            tbrow.setLayoutParams(new ViewGroup.LayoutParams(WRAP_CONTENT, WRAP_CONTENT));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            params.weight = 1f;
+            tbrow.setLayoutParams(params);
             tbrow.setBackgroundColor(Color.parseColor("#DAE8FC"));
-            tbrow.setPadding((int) getPixelToDp(5f), (int) getPixelToDp(2f), (int) getPixelToDp(5f), (int) getPixelToDp(2f));
+//            tbrow.setPadding((int) getPixelToDp(5f), (int) getPixelToDp(2f), (int) getPixelToDp(5f), (int) getPixelToDp(2f));
 
             Log.i(TAG, "onCreateView: Course List " + c.getId());
             Log.i(TAG, "onCreateView: Course List " + c.getCourseName());
